@@ -61,7 +61,7 @@ ul { list-style: none; }
     backdrop-filter: contrast(1.1) brightness(0.9);
 }
 
-//* --- UI LAYER (HUD FIXO) --- */
+/* --- UI LAYER (HUD FIXO) --- */
 .ui-layer {
     position: fixed;
     inset: 0;
