@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHERIS | Cosmos Exploration</title>
+    <meta name="description" content="Exploração visual do cosmos utilizando dados infravermelhos e telemetria orbital.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="preloader" aria-hidden="true">
+        <div class="loader-content">
+            <div class="loader-text">INITIALIZING AETHERIS PROTOCOL...</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+            <div class="loader-meta">
+                <span>MEMORY: OK</span>
+                <span>UPLINK: SECURE</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-wrapper" aria-hidden="true">
+        <video class="bg-video" autoplay muted loop playsinline>
+            <source src="video/universe.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div> 
+    </div>
+
+    <header class="ui-layer">
+        <button class="ui-top-left reset-trigger" aria-label="Reset Navigation">AETHERIS</button>
+        <div class="ui-top-right">
+            ORBITAL STATUS: <span class="status-live">STABLE</span> 
+            <span class="menu-trigger" role="button" aria-label="Menu">MENU =</span>
+        </div>
+        
+        <aside class="ui-side-left">
+            <div class="data-block">
+                <span class="label">RIGHT ASCENSION</span>
+                <span class="value scrambler">00:00:00</span>
+            </div>
+            <div class="data-block">
+                <span class="label">DECLINATION</span>
+                <span class="value declination-readout">+00° 00' 00"</span>
+            </div>
+        </aside>
+
+        <div class="ui-side-right">
+            <div class="scroll-line"></div>
+        </div>
+    </header>
+
+    <nav class="nav-overlay" aria-hidden="true">
+        <div class="nav-content">
+            <div class="nav-links">
+                <a href="#hero" class="nav-link">
+                    <span class="nav-num">00</span><span class="nav-name">The Vigil</span>
+                </a>
+                <a href="#solar-system" class="nav-link">
+                    <span class="nav-num">01</span><span class="nav-name">Solar System</span>
+                </a>
+                <a href="#observatory" class="nav-link">
+                    <span class="nav-num">02</span><span class="nav-name">The Observatory</span>
+                </a>
+                <a href="#deep-space" class="nav-link">
+                    <span class="nav-num">03</span><span class="nav-name">Deep Space</span>
+                </a>
+                <a href="#transmission" class="nav-link">
+                    <span class="nav-num">04</span><span class="nav-name">Transmission</span>
+                </a>
+            </div>
+            
+            <div class="nav-footer">
+                <span>COORDINATES: LOCALHOST</span>
+                <span>STATUS: SECURE LINK</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-wrapper">
+        
+        <section class="hero-section" id="hero">
+            <div class="hero-content">
+                <span class="sys-label">SYSTEM INITIALIZED // V.4.2</span>
+                <h1 class="hero-title">The Silent<br>Vigil</h1>
+                <div class="hero-coords">
+                    <span id="hero-ra">RA 00h 00m 00s</span>
+                    <span class="divider">|</span>
+                    <span id="hero-dec">DEC +00° 00' 00</span>
+                </div>
+            </div>
+            <span class="scroll-hint">SCROLL TO DESCEND</span>
+        </section>
+
+       <section class="info-section" id="solar-system">
+            <div class="info-grid">
+                
+                <article class="info-text">
+                    <div class="carousel-nav">
+                        <button class="nav-btn prev-btn" aria-label="Previous">← PREV</button>
+                        <span class="carousel-counter">01 / 10</span>
+                        <button class="nav-btn next-btn" aria-label="Next">NEXT →</button>
+                    </div>
+
+                    <span class="section-label" id="planet-label">SECTOR 00 // STAR</span>
+                    <h2 class="section-title" id="planet-title">The Sun</h2>
+                    <p class="section-desc" id="planet-desc">
+                        O coração do nosso sistema. Uma anã amarela de classe G2V que contém 99,8% da massa total do sistema solar.
+                    </p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-num" id="planet-stat1">0 KM</span>
+                            <span class="stat-label" id="label-stat1">DISTANCE TO CENTER</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num" id="planet-stat2">5500°C</span>
+                            <span class="stat-label" id="label-stat2">SURFACE TEMP</span>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="info-visual">
+                    <div class="hologram-container">
+                        <img id="active-planet-img" src="img/planetas/planet-sun.jpg" width="600" height="600" alt="Planet Visualization">
+                        <div class="hologram-glow"></div>
+                    </div>
+                    <div class="scanlines"></div>
+                    <div class="corner-brackets"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="webb-section" id="observatory">
+            <div class="webb-container">
+                <div class="webb-content">
+                    <header class="webb-header">
+                         <span class="sys-label gold-theme">DEEP SPACE // OBSERVATORY</span>
+                         <h2 class="webb-title">The Golden<br>Eye</h2>
+                    </header>
+
+                    <div class="webb-body">
+                        <p class="section-desc">
+                        Uma máquina do tempo estacionada no ponto Lagrange L2. 
+                        Com os seus 18 segmentos de berílio banhados a ouro, o JWST 
+                        olha através da poeira cósmica para testemunhar a primeira luz do universo.
+                        </p>
+
+                        <div class="tech-readout">
+                            <div class="readout-line">
+                                <span class="mono-label">MIRROR DIAMETER</span>
+                                <span class="mono-value">6.5 METERS</span>
+                            </div>
+                            <div class="readout-line">
+                                <span class="mono-label">OPERATING TEMP</span>
+                                <span class="mono-value">-223°C</span>
+                            </div>
+                            <div class="readout-line">
+                                <span class="mono-label">MISSION STATUS</span>
+                                <span class="mono-value active">DEPLOYED</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="webb-visual">
+                    <div class="image-mask">
+                        <img src="img/james-webb-satellite.jpg" width="800" height="1000" loading="lazy" alt="James Webb Mirrors" class="webb-img-inner">
+                    </div>
+                    <div class="visual-deco">
+                        <span class="deco-coord">NIRCAM // ACTIVE</span>
+                        <div class="deco-line"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section" id="deep-space">
+            <div class="gallery-container">
+                
+                <div class="gallery-intro">
+                    <span class="sys-label" style="color: #ff5555">SECTOR 9 // IMAGING</span>
+                    <h2 class="gallery-title">Cosmic<br>Canvas</h2>
+                    <p class="gallery-desc">
+                        Onde a luz antiga pinta a escuridão. Testemunhe o nascimento de estrelas
+                        e a dança violenta das galáxias nos confins do tempo.
+                    </p>
+                </div>
+
+                <div class="gallery-col col-left">
+                    <figure class="gallery-item">
+                        <span class="img-label">CARINA NEBULA // NIR</span>
+                        <div class="img-wrapper">
+                            <img src="img/deep-field-01.jpg" width="600" height="800" loading="lazy" alt="Carina Nebula">
+                        </div>
+                    </figure>
+                    <figure class="gallery-item">
+                        <span class="img-label">PILLARS OF CREATION // MIRI</span>
+                        <div class="img-wrapper">
+                            <img src="img/deep-field-02.jpg" width="600" height="800" loading="lazy" alt="Pillars of Creation">
+                        </div>
+                    </figure>
+                </div>
+
+                <div class="gallery-col col-right">
+                    <figure class="gallery-item">
+                        <span class="img-label">STEPHAN'S QUINTET // COMPOSITE</span>
+                        <div class="img-wrapper">
+                            <img src="img/deep-field-03.webp" width="600" height="800" loading="lazy" alt="Stephan's Quintet">
+                        </div>
+                    </figure>
+                    <figure class="gallery-item">
+                        <span class="img-label">TARANTULA NEBULA // NIR</span>
+                        <div class="img-wrapper">
+                            <img src="img/deep-field-04.jpg" width="600" height="800" loading="lazy" alt="Tarantula Nebula">
+                        </div>
+                    </figure>
+                </div>
+
+            </div>
+        </section>
+        
+        <footer class="footer-section" id="transmission">
+            
+            <div class="marquee-wrapper" aria-hidden="true">
+                <div class="marquee-inner">
+                    <span>END OF ARCHIVE &nbsp;&nbsp;✦&nbsp;&nbsp; SYSTEM STANDBY &nbsp;&nbsp;✦&nbsp;&nbsp; DATA SYNCED &nbsp;&nbsp;✦&nbsp;&nbsp; </span>
+                </div>
+            </div>
+
+            <div class="footer-container">
+                
+                <header class="footer-header">
+                    <span class="sys-label">MISSION LOG // COMPLETE</span>
+                    <h2 class="footer-title">Beyond<br>Horizon</h2>
+                </header>
+
+                <div class="info-terminal">
+                    
+                    <div class="info-block main-block">
+                        <p class="mission-text">
+                            AETHERIS é uma iniciativa digital dedicada a visualizar a vastidão do cosmos. 
+                            Através de dados abertos e imagens de espectro infravermelho, trazemos o universo 
+                            observável para a palma da sua mão.
+                        </p>
+                    </div>
+
+                    <div class="info-block">
+                        <span class="block-label">DATA SOURCES</span>
+                        <ul class="clean-list">
+                            <li>NASA Open API (Planetary)</li>
+                            <li>ESA / Hubble Legacy Archive</li>
+                            <li>James Webb Space Telescope (MAST)</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-block">
+                        <span class="block-label">DEVELOPMENT STACK</span>
+                        <ul class="clean-list">
+                            <li>GSAP + ScrollTrigger</li>
+                            <li>Lenis (Inertia Scroll)</li>
+                            <li>Vanilla JavaScript</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="footer-meta">
+                    <div class="meta-right">
+                        <span>LAT 37.7749° N</span>
+                        <span>LON 122.4194° W</span>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <h1 class="giant-logo">AETHERIS</h1>
+                </div>
+
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
